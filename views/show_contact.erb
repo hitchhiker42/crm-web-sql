@@ -1,0 +1,8 @@
+<h1><%= @contact.first_name %> <%= @contact.last_name %></h1>
+<p><strong>Email:</strong> <%= @contact.email %></p>
+<p><strong>Note:</strong></p>
+<p><%= @contact.notes %></p>
+
+<p> click <a href="/contacts/<%= @contact.id %>/edit"> here </a> to edit this contact</p>
+<!-- no space between href and = same for class id etc -->
+<!-- note alligator tags -->

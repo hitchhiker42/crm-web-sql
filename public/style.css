@@ -1,0 +1,53 @@
+h1 { 
+	color: red;
+}
+
+body{
+	background-color: #FE642E;
+	margin: 0px;
+}
+
+header{
+	width: 100%;
+	background-color: #F79F81;
+	top: 0px;
+	text-align: center;
+}
+
+.main_body{
+	text-align: center;
+	display: inline-block;
+	float: right;
+	width: 100%;
+	height:80%;
+}
+
+ul {
+	text-align: center;
+	list-style: none;
+}
+
+/*li {
+	display: inline-block;
+}
+*/
+nav{
+	background-color: #FF8000;
+	display: inline-block;
+	position: fixed;
+	left: 0 px;
+	top: 200px;
+	text-align: center;
+	width: 20%;
+}
+
+footer {
+	position: fixed;
+	background-color: #F79F81;
+	left: 0px;
+	bottom: 0px;
+	height: 10%;
+	width: 100%;
+	text-align: center;
+}
+

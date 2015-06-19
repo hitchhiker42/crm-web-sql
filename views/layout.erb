@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= request.path %> - CRM</title>
+	<link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body>
+	<header>
+		<img src = "http://vignette2.wikia.nocookie.net/hitchhikers/images/2/2f/The-Hitchhikers-Guide-to-the-Galaxy-586-5.jpg/revision/latest?cb=20110623191658" />
+
+		<p> DON'T PANIC! </p>
+	</header>
+
+	<nav>
+		<ul>
+			<li> <a href = "/contacts/new"> Add contact</a></li>
+		</ul>
+	</nav>
+
+	<div class = "main_body">
+		<%= yield %>
+	</div>
+
+	<footer>
+		<p> This page was created as a test app </p>
+		<p> links all day</p>
+	</footer>
+
+</body>
+</html>
