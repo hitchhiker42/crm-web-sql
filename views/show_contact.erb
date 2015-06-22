@@ -6,3 +6,8 @@
 <p> click <a href="/contacts/<%= @contact.id %>/edit"> here </a> to edit this contact</p>
 <!-- no space between href and = same for class id etc -->
 <!-- note alligator tags -->
+
+<form action="/contacts/<%= @contact.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" name="Delete Contact">
+</form>

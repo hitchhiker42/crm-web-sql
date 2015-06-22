@@ -21,6 +21,10 @@ get "/contacts" do
   erb :contacts
 end
 
+get '/contacts/new' do
+	erb :new_contact
+end
+
 get "/contacts/:id" do
   @contact = Contact.get(params[:id].to_i)
   if @contact
@@ -30,13 +34,38 @@ get "/contacts/:id" do
   end
 end
 
-post "/contacts" do 
-	contact = Contact.create (
-		:first_name => params[:first_name])
-		:last_name => params[:last_name]
-		:email => params[:email]
-		:notes => params[:notes]
-		)
-	redirect to('/contacts')
+post "/contacts" do
+  contact = Contact.create(
+    :first_name => params[:first_name],
+    :last_name => params[:last_name],
+    :email => params[:email],
+    :notes => params[:notes]
+  )
+  redirect to('/contacts')
 end
 
+put "/contacts/:id" do
+  contact = Contact.get(params[:id].to_i)
+  puts params
+  if contact
+    contact.first_name = params[:first_name]
+    contact.last_name = params[:last_name]
+    contact.email = params[:email]
+    contact.notes = params[:notes]
+    puts $rolodex.contacts
+
+    redirect to("/contacts")
+  else
+    raise Sinatra::NotFound
+  end
+end
+
+ delete "/contacts/:id" do
+  @contact = Contact.get(params[:id].to_i)
+  if @contact
+    @contact.destroy
+    redirect to("/contacts")
+  else
+    raise Sinatra::NotFound
+  end
+  end
